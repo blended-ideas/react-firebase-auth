@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
+import ForgotPassword from "./ForgotPassword";
+import Profile from "./Profile";
 
 function App() {
     return (
@@ -14,8 +16,10 @@ function App() {
                     <AuthProvider>
                         <Switch>
                             <Route path="/sign-up" component={Signup}/>
-                            <PrivateRoute exact path="/" component={Dashboard}/>
                             <Route path="/login" component={Login}/>
+                            <Route path="/forgot-password" component={ForgotPassword}/>
+                            <PrivateRoute exact path="/" component={Dashboard}/>
+                            <PrivateRoute exact path="/update-profile" component={Profile}/>
                         </Switch>
                     </AuthProvider>
                 </Router>
