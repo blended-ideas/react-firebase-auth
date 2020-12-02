@@ -20,7 +20,7 @@ const Login = () => {
             await login(emailRef.current.value, passwordRef.current.value);
             history.push('/');
         } catch (e) {
-            setFormError('Failed to create account.');
+            setFormError('Failed to login.');
             setLoading(false);
         }
     }
